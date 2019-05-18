@@ -12,6 +12,7 @@
                         @csrf
 
                         <div class="form-group row">
+<!--
                             <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
@@ -23,6 +24,18 @@
                                     </span>
                                 @endif
                             </div>
+-->
+                            <label for="loginid" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <div class="col-md-6">
+                                <input id="loginid" type="text" class="form-control{{ $errors->has('loginid') ? ' is-invalid' : '' }}" name="loginid" value="{{ old('loginid') }}" required autofocus>
+
+                                @if ($errors->has('loginid'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('loginid') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                                    
                         </div>
 
                         <div class="form-group row">
@@ -56,10 +69,11 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
-
+<?php /*
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
+*/ ?>
                             </div>
                         </div>
                     </form>
